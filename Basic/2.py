@@ -7,5 +7,5 @@ for i in range(tc):
     arr = list(map(int, input().split()))
 
     arr.sort()
-    print("#%d %d" %(i+1, arr[k+1]))
+    print("#%d %d" %(i+1, arr[k-1]))
 

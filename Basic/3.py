@@ -1,12 +1,17 @@
-# k번째로 큰 수
+# 3개를 합한 값에서 k번째로 큰 수
 
-arrNum, k = map(int, input().split())
+n, k = map(int, input().split())
 arr = list(map(int, input().split()))
 
-arr.sort()
+res = set()
 
-arrToSet = set(arr)
-setToArr = list(arrToSet)
+for i in range(0, n):
+    for j in range(i+1, n):
+        for l in range(j+1, n):
+            sum = arr[i] + arr[j] + arr[l]
+            res.add(sum)
 
-print(setToArr[arrNum-k+1])
+resArr = list(res)
+resArr.sort(reverse=True)
+print(resArr[k-1]) 
 
