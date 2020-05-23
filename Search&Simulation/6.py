@@ -2,41 +2,33 @@
 
 n = int(input())
 arr = [ list(map(int, input().split())) for _ in range(n) ]
-max = -2147483647
+largest = -2147483647
 
-# 행 max 비교
-for i in range(n):
-    sum = 0
-    for j in arr[i]:
-        sum += j
-    if(sum>max):
-        max = sum
+# for x in arr:
+#     print(x)
 
-# 열 max 비교
+# 가로, 세로 합
+sum1 = 0
+sum2 = 0
 for i in range(n):
-    sum = 0
+    sum1 = 0
+    sum2 = 0
     for j in range(n):
-        sum += arr[j][i]
-    if(sum>max):
-        max = sum
+        sum1 += arr[i][j]
+        sum2 += arr[j][i]
+    if sum1 > largest:
+        largest = sum1 
+    if sum2 > largest:
+        largest = sum2
 
-# 대각선 max 비교 1
-sum = 0
+# 대각선 합
+sum1 = 0
+sum2 = 0
 for i in range(n):
-    for j in range(n):
-        if i==j:
-            sum += arr[i][j]
-if(sum>max):
-    max = sum
+    sum1 += arr[i][i]
+    sum2 += arr[i][n-i-1]
+if sum1 > largest:
+    largest = sum1 
+if sum2 > largest:
+    largest = sum2
 
-# 대각선 max 비교 2
-for i in range(n):
-    for j in range(n):
-        if i+j==n:
-            sum += arr[i][j]
-if(sum>max):
-    max = sum
-
-
-print(max)
-    
