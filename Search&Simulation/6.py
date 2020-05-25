@@ -8,8 +8,7 @@ largest = -2147483647
 #     print(x)
 
 # 가로, 세로 합
-sum1 = 0
-sum2 = 0
+
 for i in range(n):
     sum1 = 0
     sum2 = 0
