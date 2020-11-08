@@ -29,3 +29,16 @@ while lt <= rt:
 
 print(len(res))
 print(res)
+
+# Solution 2
+# while(lt <= rt):
+#     if m[rt] < last and m[lt] < last:
+#         break
+#     if m[lt] >= last and (m[lt] <= m[rt] or m[rt] < last):
+#         last = m[lt]
+#         a.append('L')
+#         lt += 1
+#     else:
+#         last = m[rt]
+#         a.append('R')
+#         rt -= 1
