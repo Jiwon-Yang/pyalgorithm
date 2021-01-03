@@ -1,13 +1,14 @@
-import sys
-sys.stdin = open('input.txt', 'r')
-
 def DFS(x):
-    if v > 7:
+    if x > 7:
         return
     else:
-        DFS(v*2)
-        DFS(v*2+1)
-        print(v, end=' ')
+        # print(x, end=' ')
+        DFS(x*2)
+        # print(x, end=' ')
+        DFS(x*2+1)
+        print(x, end=' ')
 
 if __name__ == "__main__":
     DFS(1)
+
+

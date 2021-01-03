@@ -1,21 +1,21 @@
 import sys
 sys.stdin = open('input.txt', 'r')
 
-def DFS(x):
+def DFS(level, sum):
     global cnt
-    if x == m:
-        for j in range(m):
+    if level == m:
+        for j in range(level):
             print(res[j], end=' ')
-        print()
         cnt += 1
+        print()
     else:
-        for i in range(1, n+1):
-            res[x] = i
-            DFS(x+1)
+        for j in range(1, n+1):
+            res[level] = i
+            DFS(level+1, i+1)
 
 if __name__ == "__main__":
     n, m = map(int, input().split())
-    res = [0]*n
+    res = [0] * (n+1)
     cnt = 0
-    DFS(0)
+    DFS(0, 1)
     print(cnt)
